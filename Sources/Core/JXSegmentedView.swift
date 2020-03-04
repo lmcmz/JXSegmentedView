@@ -574,7 +574,7 @@ open class JXSegmentedView: UIView {
             if indicator.isIndicatorConvertToItemFrameEnabled {
                 var indicatorConvertToItemFrame = indicator.frame
                 indicatorConvertToItemFrame.origin.x -= currentSelectedItemFrame.origin.x
-                indicatorConvertToItemFrame.origin.y = fabs(currentSelectedItemFrame.origin.y)
+                indicatorConvertToItemFrame.origin.y = fabs(currentSelectedItemFrame.height - indicator.frame.height)/2
                 itemDataSource[selectedIndex].indicatorConvertToItemFrame = indicatorConvertToItemFrame
                 willSelectedCell?.reloadData(itemModel: willSelectedItemModel, selectedType: selectedType)
             }
