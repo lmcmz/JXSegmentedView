@@ -30,7 +30,7 @@ open class JXSegmentedIndicatorBackgroundView: JXSegmentedIndicatorBaseView {
         let height = getIndicatorHeight(itemFrame: model.currentSelectedItemFrame)
         let x = model.currentSelectedItemFrame.origin.x + (model.currentSelectedItemFrame.size.width - width)/2
         let y = (model.currentSelectedItemFrame.size.height - height)/2
-        frame = CGRect(x: x, y: y, width: width, height: height)
+        frame = CGRect(x: x, y: fabs(y), width: width, height: height)
     }
 
     open override func contentScrollViewDidScroll(model: JXSegmentedIndicatorParamsModel) {
