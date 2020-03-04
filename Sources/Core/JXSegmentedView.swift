@@ -466,10 +466,12 @@ open class JXSegmentedView: UIView {
                         if indicator.isIndicatorConvertToItemFrameEnabled {
                             var leftIndicatorConvertToItemFrame = indicator.frame
                             leftIndicatorConvertToItemFrame.origin.x -= leftItemFrame.origin.x
+                            leftIndicatorConvertToItemFrame.origin.y = leftItemFrame.origin.y
                             itemDataSource[baseIndex].indicatorConvertToItemFrame = leftIndicatorConvertToItemFrame
 
                             var rightIndicatorConvertToItemFrame = indicator.frame
                             rightIndicatorConvertToItemFrame.origin.x -= rightItemFrame.origin.x
+                            rightIndicatorConvertToItemFrame.origin.y = rightItemFrame.origin.y
                             itemDataSource[baseIndex + 1].indicatorConvertToItemFrame = rightIndicatorConvertToItemFrame
                         }
                     }
@@ -571,6 +573,7 @@ open class JXSegmentedView: UIView {
             if indicator.isIndicatorConvertToItemFrameEnabled {
                 var indicatorConvertToItemFrame = indicator.frame
                 indicatorConvertToItemFrame.origin.x -= currentSelectedItemFrame.origin.x
+                indicatorConvertToItemFrame.origin.y = currentSelectedItemFrame.origin.y
                 itemDataSource[selectedIndex].indicatorConvertToItemFrame = indicatorConvertToItemFrame
                 willSelectedCell?.reloadData(itemModel: willSelectedItemModel, selectedType: selectedType)
             }
