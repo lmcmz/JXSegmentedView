@@ -29,7 +29,7 @@ open class JXSegmentedIndicatorBackgroundView: JXSegmentedIndicatorBaseView {
         let width = getIndicatorWidth(itemFrame: model.currentSelectedItemFrame)
         let height = getIndicatorHeight(itemFrame: model.currentSelectedItemFrame)
         let x = model.currentSelectedItemFrame.origin.x + (model.currentSelectedItemFrame.size.width - width)/2
-        let y = (model.currentSelectedItemFrame.size.height - height)/2
+        let y = fabs(model.currentSelectedItemFrame.size.height - height)/2
         frame = CGRect(x: x, y: fabs(y), width: width, height: height)
     }
 
