@@ -61,7 +61,7 @@ open class JXSegmentedIndicatorBackgroundView: JXSegmentedIndicatorBaseView {
         
         self.frame.origin.x = targetX
         self.frame.size.width = targetWidth
-        self.frame.origin.x = targetY
+        self.frame.origin.y = targetY
     }
 
     open override func selectItem(model: JXSegmentedIndicatorParamsModel) {
