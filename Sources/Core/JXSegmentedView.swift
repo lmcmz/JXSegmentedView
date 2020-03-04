@@ -375,6 +375,7 @@ open class JXSegmentedView: UIView {
                 if indicator.isIndicatorConvertToItemFrameEnabled {
                     var indicatorConvertToItemFrame = indicator.frame
                     indicatorConvertToItemFrame.origin.x -= selectedItemFrame.origin.x
+                    indicatorConvertToItemFrame.origin.y = fabs(selectedItemFrame.origin.y)
                     itemDataSource[selectedIndex].indicatorConvertToItemFrame = indicatorConvertToItemFrame
                 }
             }
