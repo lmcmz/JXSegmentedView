@@ -55,9 +55,13 @@ open class JXSegmentedIndicatorBackgroundView: JXSegmentedIndicatorBaseView {
         if indicatorWidth == JXSegmentedViewAutomaticDimension {
             targetWidth = JXSegmentedViewTool.interpolate(from: leftWidth, to: rightWidth, percent: CGFloat(percent))
         }
-
+        
+        let height = getIndicatorHeight(itemFrame: model.currentSelectedItemFrame)
+        let targetY = fabs(leftItemFrame.height - height)/2
+        
         self.frame.origin.x = targetX
         self.frame.size.width = targetWidth
+        self.frame.origin.x = targetY
     }
 
     open override func selectItem(model: JXSegmentedIndicatorParamsModel) {
