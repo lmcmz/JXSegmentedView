@@ -70,10 +70,7 @@ open class JXSegmentedIndicatorBackgroundView: JXSegmentedIndicatorBaseView {
         let width = getIndicatorWidth(itemFrame: model.currentSelectedItemFrame)
         var toFrame = self.frame
         toFrame.origin.x = model.currentSelectedItemFrame.origin.x + (model.currentSelectedItemFrame.size.width - width)/2
-        let height = getIndicatorHeight(itemFrame: model.currentSelectedItemFrame)
-        let leftItemFrame = model.leftItemFrame
-        let targetY = fabs(leftItemFrame.height - height)/2
-        toFrame.origin.y = targetY
+        toFrame.origin.y = fabs(model.currentSelectedItemFrame.height - frame.height)/2
         toFrame.size.width = width
         if isScrollEnabled && (model.selectedType == .click || model.selectedType == .code) {
             //允许滚动且选中类型是点击或代码选中，才进行动画过渡
